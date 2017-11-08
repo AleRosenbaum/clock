@@ -1,0 +1,12 @@
+---> Tutorial que funfa 
+https://github.com/1oginov/Web-Bluetooth-Terminal
+https://github.com/1oginov/Web-Bluetooth-Terminal/blob/master/index.html
+
+Interact with Bluetooth devices on the Web - Google Dev
+https://developers.google.com/web/updates/2015/07/interact-with-ble-devices-on-the-web
+https://developers.google.com/web/updates/2015/07/interact-with-ble-devices-on-the-web#request_bluetooth_devices
+https://developers.google.com/web/updates/2015/07/interact-with-ble-devices-on-the-web#connect_to_a_bluetooth_device
+https://developers.google.com/web/updates/2015/07/interact-with-ble-devices-on-the-web#write_to_a_bluetooth_characteristic
+
+Google Chrome Github
+https://googlechrome.github.io/samples/web-bluetooth/get-characteristics.html?service=alert_notification
