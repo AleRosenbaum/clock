@@ -20,17 +20,15 @@ function onDisconnected() {
 
 function connect() {
     console.log('Requesting Bluetooth Device...');
-    navigator.bluetooth.requestDevice(
-        {
-            filters: [{ services: [] }]
-        })
+    navigator.bluetooth.requestDevice({ acceptAllDevices: true})
         .then(device => {
             console.log('> Found ' + device.name);
             console.log('Connecting to GATT Server...');
             device.addEventListener('gattserverdisconnected', onDisconnected)
             return device.gatt.connect();
+            return characteristic.writeValue('hello');
         })
-        .then(server => {
+        */.then(server => {
             console.log('Getting Service 0xffe5 - Light control...');
             return server.getPrimaryService(0xffe5);
         })
@@ -45,7 +43,7 @@ function connect() {
         })
         .catch(error => {
             console.log('Argh! ' + error);
-        });
+        }); /
 }
 
 function powerOn() {
