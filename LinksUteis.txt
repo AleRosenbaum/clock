@@ -10,3 +10,8 @@ https://developers.google.com/web/updates/2015/07/interact-with-ble-devices-on-t
 
 Google Chrome Github
 https://googlechrome.github.io/samples/web-bluetooth/get-characteristics.html?service=alert_notification
+
+https://github.com/nabontra/ServoTimer2
+
+Mediuns
+https://medium.com/ruki-founder-s-journal/august-teardown-6274a7858338
