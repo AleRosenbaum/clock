@@ -58,6 +58,14 @@
     myCharacteristic.writeValue(str2ab(data+"\n"))
     document.getElementById("input").value = "";
   }
+    function abrir() {
+    myCharacteristic.writeValue(str2ab("o"+"\n"))
+    document.getElementById("input").value = "";
+  }
+  function fechar() {
+    myCharacteristic.writeValue(str2ab("l"+"\n"))
+    document.getElementById("input").value = "";
+  }
   function str2ab(str) {
     var buf = new ArrayBuffer(str.length*2); // 2 bytes for each char
     var bufView = new Uint16Array(buf);
@@ -104,5 +112,13 @@
         </button>
       </div>
   </div>
+  <div id="connect" class="button" style="background-color: green;" >
+        <button onclick="abrir()">
+          <i class="fa fa-plug"></i>
+        </button>
+        <div id="connect" class="button" style="background-color: red;" >
+        <button onclick="fechar()">
+          <i class="fa fa-plug"></i>
+        </button>
 </body>
 </html>
