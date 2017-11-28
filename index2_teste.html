@@ -80,45 +80,35 @@
 </script>
 
 <head>
-  <title>Web-Bluetooth Terminal</title>
+  <title>Clé</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-  <div class="header">WEB-BLUETOOTH TERMINAL</div>
-  <div class="terminal"><textarea id="term" readonly class="terminal"></textarea></div>
-  <div class="footer">
-    <div class="inputfield">
-      <input id ="input" type="text" class="input" placeholder="Write something to send here...">
-    </div>
-      <div class="button" style="background-color: black;">
-        <button onclick="send()">
-          <i class="fa fa-paper-plane"></i>
+  <h1>CLÉ</h1>
+
+
+<div>
+        <button id="connect" onclick="connect()" >
+          <p>Conectar</p>
         </button>
       </div>
-      <div id="connect" class="button" style="background-color: green;" >
-        <button onclick="connect()">
-          <i class="fa fa-plug"></i>
+
+
+        <div>
+        <button onclick="abrir()" id="abrir_porta">
+          <p>Abrir</p>
         </button>
-      </div>
-      <div class="button" style="background-color: red;">
-        <button onclick="disconnect()">
-          <i class="fa fa-times"></i>
+        </div>
+
+        <div>
+        <button onclick="fechar()" id="fechar_porta">
+          <p>Fechar</p>
         </button>
-      </div>
-  </div>
-  <div id="connect" class="button" style="background-color: green;" >
-        <button onclick="abrir()">
-          <i class="fa fa-plug"></i>
-        </button>
-        <div id="connect" class="button" style="background-color: red;" >
-        <button onclick="fechar()">
-          <i class="fa fa-plug"></i>
-        </button>
+        </div>
+
 </body>
 </html>
