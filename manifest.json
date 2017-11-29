@@ -1,0 +1,17 @@
+{
+  "lang": "pt",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "name": "Clé",
+  "short_name": "Clé",
+  "display": "standalone",
+  "start_url": "index.html",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "144x144",
+      "type": "icone.png"
+    }
+  ]
+}

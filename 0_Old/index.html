@@ -1,64 +1,75 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+    <head>
+    	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no
+		initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
 
-<head>
-    <title>C-LOCK TEST</title>
+	<title>clé</title>
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+	<style>
+		@import 'ui/css/evothings-app.css';
+	</style>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+	// Redirect console.log to Evothings Workbench.
+	if (window.hyper && window.hyper.log) { console.log = hyper.log }
+	window.onerror = function(msg, url, line)
+	{
+		console.log(msg + ": " + url + ":" + line);
+	};
+	</script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name = "format-detection" content = "telephone=no"/>
+        <!--
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width;" />
+        -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
-    <link rel="stylesheet" href="styles.css" />
-	<link rel="manifest" href="manifest.json" />
+        <title>Light Control</title>
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
 
-    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-</head>
+    </head>
+    <body ontouchstart=""><!-- ontouchstart="" enables low-delay CSS transitions. -->
 
-<body>
+	
+	
 
-    <div class="app-layout mdl-layout mdl-js-layout">
+  	<div data-role="main" class="ui-content">
+  
+	<div id="connectionScreen">
+            <ul id="deviceList" class="topcoat-list">      
+            </ul>
+                       
+        </div>
+        
+        <div id="colorScreen">
+            
+            <button class="green wide" onclick="app.ledOn()">Light ON</button>
 
-        <main class="mdl-layout__content">
 
-            <h3>Clock Bluetooth Test</h3>
-            <img src="images/icon.png" style="width:80%;max-width:320px">
-            <p>Projeto Experenciar teste</p>
+			<button class="red wide" onclick="app.ledOff()">Light OFF</button>
 
-            <button onclick="connect()" class="connect-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-                <i class="material-icons">bluetooth</i> Connect
-            </button>
+            
+            <button class="yellow wide" id="disconnectButton" onclick="app.disconnect()">Disconnect</button>
+            
+        </div>
+        <div id="messageDiv" style="font-size:75%"></div>        
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/underscore-min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+            app.ledOn = function(){
+            	bluetoothSerial.write("a");
+            }
+            app.ledOff = function(){
+            	bluetoothSerial.write("b");
+            }
+        </script>
+        </div>
+        
 
-            <div class="power-button hidden">
-                <button onclick="togglePower()" class="mdl-button mdl-js-button mdl-button--fab mdl-button--raised mdl-js-ripple-effect">
-                    <i class="material-icons">lightbulb_outline</i>
-                </button>
-            </div>
-
-            <div class="color-buttons hidden">
-                <button onclick="red()" class="mdl-button mdl-js-button mdl-button--fab mdl-button--raised mdl-js-ripple-effect" style="background:#ffa0a0">
-                    R
-                </button>
-
-                <button onclick="green()" class="mdl-button mdl-js-button mdl-button--fab mdl-button--raised mdl-js-ripple-effect" style="background:#a0ffa0">
-                    G
-                </button>
-
-                <button onclick="blue()" class="mdl-button mdl-js-button mdl-button--fab mdl-button--raised mdl-js-ripple-effect" style="background:#a0a0ff">
-                    B
-                </button>
-
-            </div>
-
-            <div class="mic-button hidden">
-                <button onclick="listen()" class="mdl-button mdl-js-button mdl-button--fab mdl-button--raised mdl-js-ripple-effect">
-                    <i class="material-icons">microphone</i>
-                </button>
-            </div>
-        </main>
-    </div>
-
-    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.4.0/annyang.min.js"></script>
-    <script src="bulb.js"></script>
-</body>
-
+    </body>
 </html>
