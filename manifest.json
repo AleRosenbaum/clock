@@ -9,7 +9,7 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "icon.png",
+      "src": "css/icon.png",
       "sizes": "144x144",
       "type": "icone.png"
     }

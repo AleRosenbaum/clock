@@ -109,6 +109,32 @@
     
 }
 
+navigator.serviceWorker && navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {  
+  serviceWorkerRegistration.pushManager.getSubscription()  
+    .then(function(subscription) {  
+      // subscription will be null or a PushSubscription
+    });
+});
+
+if (subscription) {
+        console.info('Got existing', subscription);
+        window.subscription = subscription;
+        return;  // got one, yay
+      }
+
+      const applicationServerKey = urlB64ToUint8Array(publicKey);
+      serviceWorkerRegistration.pushManager.subscribe({
+          userVisibleOnly: true,
+          applicationServerKey,
+      })
+        .then(function(subscription) { 
+          console.info('Newly subscribed to push!', subscription);
+          window.subscription = subscription;
+        });
+
+        const publicKey = 'Cle Smart Lock';
+
+
 
 </script>
 
@@ -117,7 +143,8 @@
   <link rel="shortcut icon" href="favicon.ico" type="css/favicon.ico">
   <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+  <link rel="manifest" href="manifest.json" />
 </head>
 
 <body>
