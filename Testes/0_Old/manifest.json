@@ -1,0 +1,17 @@
+{
+  "lang": "pt",
+  "background_color": "#afa7a7",
+  "theme_color": "#afa7a7",
+  "name": "C-Lock Dev",
+  "short_name": "C-Lock Dev",
+  "display": "standalone",
+  "start_url": "index.html",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "images/icon.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ]
+}
